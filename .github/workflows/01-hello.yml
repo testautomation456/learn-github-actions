@@ -1,0 +1,32 @@
+name: 01 - Hello Actions
+
+# Triggers: run on every push, on pull requests, and manually via the Actions tab.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print some info
+        run: |
+          echo "Hello, GitHub Actions!"
+          echo "Triggered by: ${{ github.event_name }}"
+          echo "Branch: ${{ github.ref_name }}"
+
+      - name: List files in the repo
+        run: ls -la
+
+  say-hello-matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        greeting: [Hi, Hello, Hey]
+    steps:
+      - name: Greet
+        run: echo "${{ matrix.greeting }}, from job ${{ strategy.job-index }}"
