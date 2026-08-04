@@ -13,11 +13,17 @@ jobs:
 
     steps:
 
-      - name: Say hello
-        run: echo "GitHub Actions started"
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Show operating system
-        run: uname -a
+      - name: Display repository files
+        run: ls -la
 
-      - name: Finish
-        run: echo "GitHub Actions completed"
+      - name: Check index.html
+        run: test -f index.html
+
+      - name: Check CSS
+        run: test -f style.css
+
+      - name: Website validation passed
+        run: echo "Website validation PASSED"
