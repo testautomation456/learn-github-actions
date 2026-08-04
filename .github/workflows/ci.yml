@@ -1,0 +1,23 @@
+name: HTML Website CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  website-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Say hello
+        run: echo "GitHub Actions started"
+
+      - name: Show operating system
+        run: uname -a
+
+      - name: Finish
+        run: echo "GitHub Actions completed"
