@@ -21,3 +21,14 @@ code {
   color: #555;
   font-size: 0.9rem;
 }
+
+#about-poc {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d8d8d8;
+}
+
+#about-poc h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
